@@ -69,10 +69,10 @@ locals {
       # Second /23 of the second subset of the VPC (split in 2)
       cidr = cidrsubnet(cidrsubnets(local.vpc_cidr, 1, 1)[1], 6, 1)
     }
-    "eks-2" = {
-      az = format("${local.region}%s", "c"),
-      # Third /23 of the second subset of the VPC (split in 2)
-      cidr = cidrsubnet(cidrsubnets(local.vpc_cidr, 1, 1)[1], 6, 2)
-    }
+    # "eks-2" = {
+    #   az = format("${local.region}%s", "c"),
+    #   # Third /23 of the second subset of the VPC (split in 2)
+    #   cidr = cidrsubnet(cidrsubnets(local.vpc_cidr, 1, 1)[1], 6, 2)
+    # }
   }
 }
